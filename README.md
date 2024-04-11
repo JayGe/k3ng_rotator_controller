@@ -1,8 +1,13 @@
 # K3NG Rotator Controller
 
+## MODIFIED CONFIG
+
+Configuration options added for my own rotator setup using a Nextion 5 inch display including the VK4GHZ HMI/TFT files, RTC, and dual slewing Coresun Drive SVH3 settings as detailed by [N5TM](https://github.com/dbn5tm/K3NG_N5TM_SVH3).
+
 ## Introduction
 
 This is an Arduino-based rotator interface that interfaces a computer to a rotator or rotator controller, emulating the Yaesu GS-232A/B and Easycom protocols which are supported by a myriad of logging, contest, and control programs.  It can be easily interfaced with commercial rotator control units.  With the addition of a proper capacity power supply and several interface components such as relays, this unit could also serve as a total replacement for a rotator control unit or serve as the basis for a 100% homebrew rotation system.  Several azimuth and elevation position sensors including potentiometers, rotary encoders, and I2C devices are supported.  The code is very flexible, modular, and easy to read allowing intermediate and advanced experimenters and builders to customize it.
+
 
 ## Documentation
 

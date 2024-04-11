@@ -7,6 +7,7 @@
 #if !defined(rotator_hardware_h)   // can't touch this
 #define rotator_hardware_h         // can't touch this
 
+#define HARDWARE_GI7UGV          // customize rotator_features_gi7ugv.h, rotators_pins_gi7ugv.h, rotator_settings_gi7ugv.h
 // #define HARDWARE_M0UPU          // customize rotator_features_m0upu.h, rotators_pins_m0upu.h, rotator_settings_m0upu.h
 // #define HARDWARE_WB6KCN         // customize rotator_features_wb6kcn.h, rotators_pins_wb6kcn.h, rotator_settings_wb6kcn.h
 // #define HARDWARE_WB6KCN_K3NG         // K3NG test jig - do not use
@@ -41,7 +42,7 @@
 
 // do not modify anything below this line
 
-#if defined(HARDWARE_M0UPU) || defined(HARDWARE_EA4TX_ARS_USB) || defined(HARDWARE_WB6KCN) || defined(HARDWARE_TEST) || defined(HARDWARE_WB6KCN_K3NG)
+#if defined(HARDWARE_M0UPU) || defined(HARDWARE_EA4TX_ARS_USB) || defined(HARDWARE_WB6KCN) || defined(HARDWARE_TEST) || defined(HARDWARE_WB6KCN_K3NG) || defined(HARDWARE_GI7UGV)
   #define HARDWARE_CUSTOM
 #endif
 

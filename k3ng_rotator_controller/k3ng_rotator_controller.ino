@@ -1098,6 +1098,9 @@
       2023.10.06.2200
         FEATURE_AZ_POSITION_HH12_AS5045_SSI_RELATIVE: fixed bugs
 
+      2024.SVH3.Hack
+        Merged in changes from N5TM config for coresundrive SVH3 plus my own configuration and nextion files for 5 inch display
+
     All library files should be placed in directories likes \sketchbook\libraries\library1\ , \sketchbook\libraries\library2\ , etc.
     Anything rotator_*.* should be in the ino directory!
 
@@ -1128,6 +1131,9 @@
 #endif
 #ifdef HARDWARE_M0UPU
   #include "rotator_features_m0upu.h"
+#endif
+#ifdef HARDWARE_GI7UGV
+  #include "rotator_features_gi7ugv.h"
 #endif
 #ifdef HARDWARE_TEST
   #include "rotator_features_test.h"
@@ -1254,6 +1260,9 @@
 #ifdef HARDWARE_WB6KCN
   #include "rotator_pins_wb6kcn.h"
 #endif
+#ifdef HARDWARE_GI7UGV
+  #include "rotator_pins_gi7ugv.h"
+#endif
 #ifdef HARDWARE_TEST
   #include "rotator_pins_test.h"
 #endif
@@ -1274,6 +1283,9 @@
 #endif
 #ifdef HARDWARE_M0UPU
   #include "rotator_settings_m0upu.h"
+#endif
+#ifdef HARDWARE_GI7UGV
+  #include "rotator_settings_gi7ugv.h"
 #endif
 #ifdef HARDWARE_TEST
   #include "rotator_settings_test.h"
