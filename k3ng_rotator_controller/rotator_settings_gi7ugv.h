@@ -334,10 +334,10 @@ You can tweak these, but read the online documentation!
 #define ROTATE_PIN_ACTIVE_VALUE HIGH */
 
 // Added in version 2020.06.20.01
-#define ROTATE_PIN_AZ_INACTIVE_VALUE LOW
-#define ROTATE_PIN_AZ_ACTIVE_VALUE HIGH
-#define ROTATE_PIN_EL_INACTIVE_VALUE LOW
-#define ROTATE_PIN_EL_ACTIVE_VALUE HIGH
+#define ROTATE_PIN_AZ_INACTIVE_VALUE HIGH
+#define ROTATE_PIN_AZ_ACTIVE_VALUE LOW
+#define ROTATE_PIN_EL_INACTIVE_VALUE HIGH
+#define ROTATE_PIN_EL_ACTIVE_VALUE LOW
 
 // Changed in 2020.06.26.02
 // Serial Port Settings
