@@ -2831,11 +2831,15 @@ void initialize_rotary_encoders(){
   #ifdef FEATURE_AZ_POSITION_INCREMENTAL_ENCODER
     pinMode(az_incremental_encoder_pin_phase_a, INPUT);
     pinMode(az_incremental_encoder_pin_phase_b, INPUT);
-    pinMode(az_incremental_encoder_pin_phase_z, INPUT);
+    #ifdef FEATURE_AZ_POSITION_INCREMENTAL_ENCODER_Z_PIN
+      pinMode(az_incremental_encoder_pin_phase_z, INPUT);
+    #endif
     #ifdef OPTION_INCREMENTAL_ENCODER_PULLUPS
       digitalWrite(az_incremental_encoder_pin_phase_a, HIGH);
       digitalWrite(az_incremental_encoder_pin_phase_b, HIGH);
-      digitalWrite(az_incremental_encoder_pin_phase_z, HIGH);
+      #ifdef FEATURE_AZ_POSITION_INCREMENTAL_ENCODER_Z_PIN
+        digitalWrite(az_incremental_encoder_pin_phase_z, HIGH);
+      #endif
     #endif // OPTION_INCREMENTAL_ENCODER_PULLUPS
     attachInterrupt(AZ_POSITION_INCREMENTAL_ENCODER_A_PIN_INTERRUPT, az_position_incremental_encoder_interrupt_handler, CHANGE);
     attachInterrupt(AZ_POSITION_INCREMENTAL_ENCODER_B_PIN_INTERRUPT, az_position_incremental_encoder_interrupt_handler, CHANGE);
@@ -2845,19 +2849,23 @@ void initialize_rotary_encoders(){
   #endif // FEATURE_AZ_POSITION_INCREMENTAL_ENCODER
 
   #if defined(FEATURE_EL_POSITION_INCREMENTAL_ENCODER) && defined(FEATURE_ELEVATION_CONTROL)
-  pinMode(el_incremental_encoder_pin_phase_a, INPUT);
-  pinMode(el_incremental_encoder_pin_phase_b, INPUT);
-  pinMode(el_incremental_encoder_pin_phase_z, INPUT);
-  #ifdef OPTION_INCREMENTAL_ENCODER_PULLUPS
-  digitalWrite(el_incremental_encoder_pin_phase_a, HIGH);
-  digitalWrite(el_incremental_encoder_pin_phase_b, HIGH);
-  digitalWrite(el_incremental_encoder_pin_phase_z, HIGH);
-  #endif // OPTION_INCREMENTAL_ENCODER_PULLUPS
-  attachInterrupt(EL_POSITION_INCREMENTAL_ENCODER_A_PIN_INTERRUPT, el_position_incremental_encoder_interrupt_handler, CHANGE);
-  attachInterrupt(EL_POSITION_INCREMENTAL_ENCODER_B_PIN_INTERRUPT, el_position_incremental_encoder_interrupt_handler, CHANGE);
-  delay(250);
-  el_3_phase_encoder_last_phase_a_state = digitalRead(el_incremental_encoder_pin_phase_a);
-  el_3_phase_encoder_last_phase_b_state = digitalRead(el_incremental_encoder_pin_phase_b);
+    pinMode(el_incremental_encoder_pin_phase_a, INPUT);
+    pinMode(el_incremental_encoder_pin_phase_b, INPUT);
+    #ifdef FEATURE_EL_POSITION_INCREMENTAL_ENCODER_Z_PIN
+      pinMode(el_incremental_encoder_pin_phase_z, INPUT);
+    #endif
+    #ifdef OPTION_INCREMENTAL_ENCODER_PULLUPS
+    digitalWrite(el_incremental_encoder_pin_phase_a, HIGH);
+    digitalWrite(el_incremental_encoder_pin_phase_b, HIGH);
+    #ifdef FEATURE_EL_POSITION_INCREMENTAL_ENCODER_Z_PIN
+      digitalWrite(el_incremental_encoder_pin_phase_z, HIGH);
+    #endif
+    #endif // OPTION_INCREMENTAL_ENCODER_PULLUPS
+    attachInterrupt(EL_POSITION_INCREMENTAL_ENCODER_A_PIN_INTERRUPT, el_position_incremental_encoder_interrupt_handler, CHANGE);
+    attachInterrupt(EL_POSITION_INCREMENTAL_ENCODER_B_PIN_INTERRUPT, el_position_incremental_encoder_interrupt_handler, CHANGE);
+    delay(250);
+    el_3_phase_encoder_last_phase_a_state = digitalRead(el_incremental_encoder_pin_phase_a);
+    el_3_phase_encoder_last_phase_b_state = digitalRead(el_incremental_encoder_pin_phase_b);
   #endif // defined(FEATURE_EL_POSITION_INCREMENTAL_ENCODER) && defined(FEATURE_ELEVATION_CONTROL)
 
 } /* initialize_rotary_encoders */
@@ -13198,7 +13206,11 @@ void az_position_incremental_encoder_interrupt_handler(){
   byte rotation_result = 0;
   byte current_phase_a = digitalReadEnhanced(az_incremental_encoder_pin_phase_a);
   byte current_phase_b = digitalReadEnhanced(az_incremental_encoder_pin_phase_b);
-  byte current_phase_z = digitalReadEnhanced(az_incremental_encoder_pin_phase_z);
+  #ifdef FEATURE_AZ_POSITION_INCREMENTAL_ENCODER_Z_PIN
+    byte current_phase_z = digitalReadEnhanced(az_incremental_encoder_pin_phase_z);
+  #else
+    byte current_phase_z = 1;
+  #endif
 
   #ifdef DEBUG_AZ_POSITION_INCREMENTAL_ENCODER
     az_position_incremental_encoder_interrupt++;
@@ -13281,8 +13293,11 @@ void el_position_incremental_encoder_interrupt_handler(){
   byte rotation_result = 0;
   byte current_phase_a = digitalReadEnhanced(el_incremental_encoder_pin_phase_a);
   byte current_phase_b = digitalReadEnhanced(el_incremental_encoder_pin_phase_b);
-  byte current_phase_z = digitalReadEnhanced(el_incremental_encoder_pin_phase_z);
-
+  #ifdef FEATURE_EL_POSITION_INCREMENTAL_ENCODER_Z_PIN
+    byte current_phase_z = digitalReadEnhanced(el_incremental_encoder_pin_phase_z);
+  #else
+    byte current_phase_z = 1;
+  #endif
   #ifdef DEBUG_EL_POSITION_INCREMENTAL_ENCODER
     el_position_incremental_encoder_interrupt++;
   #endif // DEBUG_EL_POSITION_INCREMENTAL_ENCODER

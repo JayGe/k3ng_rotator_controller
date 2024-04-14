@@ -38,8 +38,8 @@
 
 /*----------- elevation pins --------------*/
 #ifdef FEATURE_ELEVATION_CONTROL
-  #define rotate_up 5               // goes high to activate rotator elevation up
-  #define rotate_down 4             // goes high to activate rotator elevation down
+  #define rotate_up 4               // goes high to activate rotator elevation up
+  #define rotate_down 5             // goes high to activate rotator elevation down
   #define rotate_up_or_down 0       // goes high when elevation up or down is activated
   #define rotate_up_pwm 0           // optional - PWM UP output - set to 0 to disable (must be PWM capable pin)
   #define rotate_down_pwm 0         // optional - PWM DOWN output - set to 0 to disable (must be PWM capable pin)
@@ -131,7 +131,7 @@
 #ifdef FEATURE_AZ_POSITION_INCREMENTAL_ENCODER
   #define az_incremental_encoder_pin_phase_a 3 //3 must be an interrupt capable pin
   #define az_incremental_encoder_pin_phase_b 2 //3 // must be an interrupt capable pin
-  #define az_incremental_encoder_pin_phase_z 0 //4
+  //#define az_incremental_encoder_pin_phase_z 0 //4
   #define AZ_POSITION_INCREMENTAL_ENCODER_A_PIN_INTERRUPT 1 //0             // Uno: pin 2 = interrupt 0, pin 3 = interrupt 1 ; Mega: pin 2 = interrupt 0, pin 3 = interrupt 1, pin 21 = interrupt 2, pin 20 = interrupt 3, pin 19 = interrupt 4, pin 18 = interrupt 5
   #define AZ_POSITION_INCREMENTAL_ENCODER_B_PIN_INTERRUPT 0 //1             // Uno: pin 2 = interrupt 0, pin 3 = interrupt 1 ; Mega: pin 2 = interrupt 0, pin 3 = interrupt 1, pin 21 = interrupt 2, pin 20 = interrupt 3, pin 19 = interrupt 4, pin 18 = interrupt 5
                                                                               // read http://arduino.cc/en/Reference/AttachInterrupt for details on hardware and interrupts
@@ -140,11 +140,12 @@
 #ifdef FEATURE_EL_POSITION_INCREMENTAL_ENCODER
   #define el_incremental_encoder_pin_phase_a 19 //18 //2 // must be an interrupt capable pin
   #define el_incremental_encoder_pin_phase_b 18 //19 //3 // must be an interrupt capable pin
-  #define el_incremental_encoder_pin_phase_z 0 //22 //4
+  //#define el_incremental_encoder_pin_phase_z 0 //22 //4
   #define EL_POSITION_INCREMENTAL_ENCODER_A_PIN_INTERRUPT 4 //5 //0             // Uno: pin 2 = interrupt 0, pin 3 = interrupt 1 ; Mega: pin 2 = interrupt 0, pin 3 = interrupt 1, pin 21 = interrupt 2, pin 20 = interrupt 3, pin 19 = interrupt 4, pin 18 = interrupt 5
   #define EL_POSITION_INCREMENTAL_ENCODER_B_PIN_INTERRUPT 5 //4 //1             // Uno: pin 2 = interrupt 0, pin 3 = interrupt 1 ; Mega: pin 2 = interrupt 0, pin 3 = interrupt 1, pin 21 = interrupt 2, pin 20 = interrupt 3, pin 19 = interrupt 4, pin 18 = interrupt 5
                                                                               // read http://arduino.cc/en/Reference/AttachInterrupt for details on hardware and interrupts
 #endif //FEATURE_EL_POSITION_INCREMENTAL_ENCODER
+
 
 #ifdef FEATURE_YOURDUINO_I2C_LCD
   #define En_pin  2

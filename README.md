@@ -2,7 +2,7 @@
 
 ## MODIFIED CONFIG
 
-Configuration options added for my own rotator setup using a Nextion 5 inch display including the VK4GHZ HMI/TFT files, RTC, and dual slewing Coresun Drive SVH3 settings as detailed by [N5TM](https://github.com/dbn5tm/K3NG_N5TM_SVH3).
+Configuration options added for my own rotator setup using a Nextion 5 inch display including the VK4GHZ HMI/TFT files, RTC, and dual slewing Coresun Drive SVH3, settings as detailed by [N5TM](https://github.com/dbn5tm/K3NG_N5TM_SVH3).
 
 ## Introduction
 

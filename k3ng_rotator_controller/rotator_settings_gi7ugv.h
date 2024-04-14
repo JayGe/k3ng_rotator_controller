@@ -16,7 +16,7 @@
             \Q - Save settings in the EEPROM and restart            
 */   
                                                 
-#define ELEVATION_MAXIMUM_DEGREES 120           // change this to set the maximum elevation in degrees
+#define ELEVATION_MAXIMUM_DEGREES 80           // change this to set the maximum elevation in degrees
 
 /* --------------------------- Settings ------------------------------------------------
 
@@ -89,8 +89,8 @@ You can tweak these, but read the online documentation!
 #define AZ_MANUAL_ROTATE_CW_LIMIT 360  // add 360 to this if you go past 0 degrees (i.e. 180 CW after 0 degrees = 540)
 
 // Settings for OPTION_EL_MANUAL_ROTATE_LIMITS
-#define EL_MANUAL_ROTATE_DOWN_LIMIT -1
-#define EL_MANUAL_ROTATE_UP_LIMIT 181
+#define EL_MANUAL_ROTATE_DOWN_LIMIT 5
+#define EL_MANUAL_ROTATE_UP_LIMIT 80
 
 // Speed pot settings
 #define SPEED_POT_LOW 0
@@ -158,7 +158,7 @@ You can tweak these, but read the online documentation!
 
 #define EEPROM_WRITE_DIRTY_CONFIG_TIME  30  //time in seconds
 
-#define DISPLAY_DECIMAL_PLACES 0
+#define DISPLAY_DECIMAL_PLACES 1
 
 #define AZ_POSITION_ROTARY_ENCODER_DEG_PER_PULSE 0.01
 #define EL_POSITION_ROTARY_ENCODER_DEG_PER_PULSE 0.01
@@ -201,13 +201,13 @@ You can tweak these, but read the online documentation!
 #define MOON_TRACKING_CHECK_INTERVAL 5000 // This is only written to the configuration upon first boot of the code or when EEPROM_MAGIC_NUMBER is changed in rotator.h
 #define MOON_AOS_AZIMUTH_MIN 0
 #define MOON_AOS_AZIMUTH_MAX 360
-#define MOON_AOS_ELEVATION_MIN 0
+#define MOON_AOS_ELEVATION_MIN 5
 #define MOON_AOS_ELEVATION_MAX 180
 
 #define SUN_TRACKING_CHECK_INTERVAL 5000 // This is only written to the configuration upon first boot of the code or when EEPROM_MAGIC_NUMBER is changed in rotator.h
 #define SUN_AOS_AZIMUTH_MIN 0
 #define SUN_AOS_AZIMUTH_MAX 360
-#define SUN_AOS_ELEVATION_MIN 0
+#define SUN_AOS_ELEVATION_MIN 5
 #define SUN_AOS_ELEVATION_MAX 180
 
 #define LCD_DISPLAY_DEGREES_STRING "\xDF"
