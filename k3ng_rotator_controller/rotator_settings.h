@@ -35,7 +35,7 @@ You can tweak these, but read the online documentation!
 #define ANALOG_EL_FULL_DOWN_EEPROM_INITIALIZE 1
 #define ANALOG_EL_FULL_UP_EEPROM_INITIALIZE 1023
 
-#define ANALOG_AZ_OVERLAP_DEGREES 540         // if overlap_led above is enabled, turn on overlap led line if azimuth is greater than this setting
+//#define ANALOG_AZ_OVERLAP_DEGREES 540         // if overlap_led above is enabled, turn on overlap led line if azimuth is greater than this setting //ALTERED
                                               // you must use raw azimuth (if the azimuth on the rotator crosses over to 0 degrees, add 360
                                               // for example, on a Yaesu 450 degree rotator with a starting point of 180 degrees, and an overlap LED
                                               // turning on when going CW and crossing 180, ANALOG_AZ_OVERLAP_DEGREES should be set for 540 (180 + 360)

@@ -77,13 +77,13 @@
 #endif //FEATURE_EL_POSITION_ROTARY_ENCODER
 
 #ifdef FEATURE_AZ_POSITION_PULSE_INPUT
-  #define az_position_pulse_pin 0                       // must be an interrupt capable pin!
-  #define AZ_POSITION_PULSE_PIN_INTERRUPT 0             // Uno: pin 2 = interrupt 0, pin 3 = interrupt 1 ; Mega: pin 2 = interrupt 0, pin 3 = interrupt 1, pin 21 = interrupt 2, pin 20 = interrupt 3, pin 19 = interrupt 4, pin 18 = interrupt 5
+  #define az_position_pulse_pin 3                       // must be an interrupt capable pin!
+  #define AZ_POSITION_PULSE_PIN_INTERRUPT 1             // Uno: pin 2 = interrupt 0, pin 3 = interrupt 1 ; Mega: pin 2 = interrupt 0, pin 3 = interrupt 1, pin 21 = interrupt 2, pin 20 = interrupt 3, pin 19 = interrupt 4, pin 18 = interrupt 5
 #endif                                                // read http://arduino.cc/en/Reference/AttachInterrupt for details on hardware and interrupts
 
 #ifdef FEATURE_EL_POSITION_PULSE_INPUT
-  #define el_position_pulse_pin 0                       // must be an interrupt capable pin!
-  #define EL_POSITION_PULSE_PIN_INTERRUPT 0             // Uno: pin 2 = interrupt 0, pin 3 = interrupt 1 ; Mega: pin 2 = interrupt 0, pin 3 = interrupt 1, pin 21 = interrupt 2, pin 20 = interrupt 3, pin 19 = interrupt 4, pin 18 = interrupt 5
+  #define el_position_pulse_pin 19                       // must be an interrupt capable pin!
+  #define EL_POSITION_PULSE_PIN_INTERRUPT 4             // Uno: pin 2 = interrupt 0, pin 3 = interrupt 1 ; Mega: pin 2 = interrupt 0, pin 3 = interrupt 1, pin 21 = interrupt 2, pin 20 = interrupt 3, pin 19 = interrupt 4, pin 18 = interrupt 5
 #endif                                                // read http://arduino.cc/en/Reference/AttachInterrupt for details on hardware and interrupts
 
 #ifdef FEATURE_PARK

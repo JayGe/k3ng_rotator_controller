@@ -16,7 +16,7 @@
             \Q - Save settings in the EEPROM and restart            
 */   
                                                 
-#define ELEVATION_MAXIMUM_DEGREES 80           // change this to set the maximum elevation in degrees
+#define ELEVATION_MAXIMUM_DEGREES 75           // change this to set the maximum elevation in degrees
 
 /* --------------------------- Settings ------------------------------------------------
 
@@ -35,7 +35,7 @@ You can tweak these, but read the online documentation!
 #define ANALOG_EL_FULL_DOWN_EEPROM_INITIALIZE 1
 #define ANALOG_EL_FULL_UP_EEPROM_INITIALIZE 1023
 
-#define ANALOG_AZ_OVERLAP_DEGREES 360         // if overlap_led above is enabled, turn on overlap led line if azimuth is greater than this setting
+//#define ANALOG_AZ_OVERLAP_DEGREES 360         // if overlap_led above is enabled, turn on overlap led line if azimuth is greater than this setting //ARGH
                                               // you must use raw azimuth (if the azimuth on the rotator crosses over to 0 degrees, add 360
                                               // for example, on a Yaesu 450 degree rotator with a starting point of 180 degrees, and an overlap LED
                                               // turning on when going CW and crossing 180, ANALOG_AZ_OVERLAP_DEGREES should be set for 540 (180 + 360)
@@ -107,7 +107,7 @@ You can tweak these, but read the online documentation!
 #define ENCODER_PRESET_TIMEOUT 5000
 
 // various code settings
-#define AZIMUTH_TOLERANCE 0.1            // rotator will stop within X degrees when doing autorotation
+#define AZIMUTH_TOLERANCE 0.1           // rotator will stop within X degrees when doing autorotation
 #define ELEVATION_TOLERANCE 0.1 //1.0
 
 #define OPERATION_TIMEOUT 1200000        // timeout for any rotation operation in mS ; 120 seconds is usually enough unless you have the speed turned down
@@ -163,8 +163,8 @@ You can tweak these, but read the online documentation!
 #define AZ_POSITION_ROTARY_ENCODER_DEG_PER_PULSE 0.01
 #define EL_POSITION_ROTARY_ENCODER_DEG_PER_PULSE 0.01
 
-#define AZ_POSITION_PULSE_DEG_PER_PULSE 0.01
-#define EL_POSITION_PULSE_DEG_PER_PULSE 0.01
+#define AZ_POSITION_PULSE_DEG_PER_PULSE 0.005263158
+#define EL_POSITION_PULSE_DEG_PER_PULSE 0.005263158
 
 #define NOT_PARKED_DETECT_TIME_MS 1000
 
@@ -259,8 +259,11 @@ You can tweak these, but read the online documentation!
  *
  */
 
-#define AZIMUTH_CALIBRATION_FROM_ARRAY {0,360}            /* these are in "raw" degrees, i.e. when going east past 360 degrees, add 360 degrees*/
-#define AZIMUTH_CALIBRATION_TO_ARRAY {0,360}
+//#define AZIMUTH_CALIBRATION_FROM_ARRAY {180,630}            /* these are in "raw" degrees, i.e. when going east past 360 degrees, add 360 degrees*/
+//#define AZIMUTH_CALIBRATION_TO_ARRAY {180,630}
+
+#define AZIMUTH_CALIBRATION_FROM_ARRAY {180,630}            /* these are in "raw" degrees, i.e. when going east past 360 degrees, add 360 degrees*/
+#define AZIMUTH_CALIBRATION_TO_ARRAY {180,630}
 
 // example: reverse rotation sensing
 //   #define AZIMUTH_CALIBRATION_FROM_ARRAY {0,359}
