@@ -89,7 +89,7 @@ You can tweak these, but read the online documentation!
 #define AZ_MANUAL_ROTATE_CW_LIMIT 360  // add 360 to this if you go past 0 degrees (i.e. 180 CW after 0 degrees = 540)
 
 // Settings for OPTION_EL_MANUAL_ROTATE_LIMITS
-#define EL_MANUAL_ROTATE_DOWN_LIMIT 5
+#define EL_MANUAL_ROTATE_DOWN_LIMIT 3.3
 #define EL_MANUAL_ROTATE_UP_LIMIT 80
 
 // Speed pot settings
